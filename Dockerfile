@@ -23,8 +23,9 @@ CMD ["npm", "run", "serve"]
 # docker build -t todo .
 
 # Run
-# [example with mount] docker run --mount type=volume,src=<volume-name>,dst=<mount-path>
+# [example with mount] docker run --mount type=volume,src=<volume-name>,dst=<mount-path-in-container>
 # [example with volume] docker run --volume <volume-name>:<mount-path-in-container>
+# docker run -d --mount type=volume,source=sqlite-data,target=/etc/todos/ -p 3000:3000 todo
 # docker run -d --volume sqlite-data:/etc/todos/ -p 3000:3000 todo
 
 # Stop
