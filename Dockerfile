@@ -9,19 +9,28 @@ COPY . .
 
 EXPOSE 3000
 
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "serve"]
 
 
+# []: use a multi stage build
+# []: allow changes in dev
+# [x] persist the db
+# []: deploy to ec2
+# []: deploy to ecs
 
-# TODO: use a multi stage build
-# TODO: allow changes in dev
-# TODO: persist the db
-# TODO: deploy to ec2
-# TODO: deploy to ecs
 
-
-# build
+# Build
 # docker build -t todo .
 
 # Run
-# docker run -p 3000:3000 todo
+# [example with mount] docker run --mount type=volume,src=<volume-name>,dst=<mount-path>
+# [example with volume] docker run --volume <volume-name>:<mount-path-in-container>
+# docker run -d --volume sqlite-data:/etc/todos/ -p 3000:3000 todo
+
+# Stop
+# docker stop <container_id>
+
+# Debug
+# docker exec -it <container_id> sh
+
+
