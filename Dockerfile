@@ -1,4 +1,4 @@
-#TODO: use a specific node image
+#[]: use a specific node image
 FROM node 
 
 COPY package.json .
@@ -12,9 +12,9 @@ EXPOSE 3000
 CMD ["npm", "run", "serve"]
 
 
-# []: use a multi stage build
-# []: allow changes in dev
 # [x] persist the db
+# []: allow changes in dev
+# []: use a multi stage build
 # []: deploy to ec2
 # []: deploy to ecs
 
