@@ -1,11 +1,18 @@
 #[]: use a specific node image
-FROM node 
+FROM node AS build
 
 WORKDIR /usr/local/app
 
 COPY package.json .
 
 RUN npm i
+
+
+FROM node:lts-alpine3.21
+
+WORKDIR /usr/local/app
+
+COPY --from=build /usr/local/app/node_modules ./node_modules 
 
 COPY . .
 
@@ -16,7 +23,7 @@ CMD ["npm", "run", "serve"]
 
 # [x] persist the db
 # [x]: allow changes in dev
-# []: use a multi stage build
+# [x]: use a multi stage build
 # []: deploy to ec2
 # []: deploy to ecs
 
