@@ -1,5 +1,4 @@
-#[]: use a specific node image
-FROM node AS build
+FROM node:24 AS build
 
 WORKDIR /usr/local/app
 
