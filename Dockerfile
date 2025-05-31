@@ -19,11 +19,15 @@ EXPOSE 3000
 
 CMD ["npm", "run", "serve"]
 
-
+# [x] use a specific node image
 # [x] persist the db
 # [x]: allow changes in dev
 # [x]: use a multi stage build
 # [x]: deploy to ec2
+# []: github actions: deploy on each merge
+# []: github actions: add linting o
+# []: github actions: add tests
+# []: use a staging/prod promote workflow
 # []: deploy to ecs
 
 
